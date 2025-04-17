@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
+using App.Scripts.Core;
 using Zenject;
 
-public class GameState : IInitializable
+public class BasicResourceManager : IInitializable, IResourceManager
 {
     // Simple way of storing resources
-    // Could be later expanded into a separate ResourceStoringClass.
+    // Could be replaced with a state or DB request later
     private readonly Dictionary<GameResources, int> _resources = new Dictionary<GameResources, int>();
     
     public async void Initialize()
@@ -35,13 +35,3 @@ public class GameState : IInitializable
     }
 }
 
- 
-public enum GameResources
-{
-    Gold,
-    Wood,
-    Rock,
-    Iron,
-    Oil
-
-}
