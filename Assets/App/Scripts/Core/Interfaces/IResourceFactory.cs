@@ -1,7 +1,7 @@
 ﻿namespace App.Scripts.Core
 {
-    public class IResourceFactory
+    public interface IResourceFactory
     {
-        
+        void Produce();
     }
 }
