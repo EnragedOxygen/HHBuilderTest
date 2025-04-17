@@ -9,7 +9,7 @@ public class BasicResourceManager : IInitializable, IResourceManager
     // Could be replaced with a state or DB request later
     private readonly Dictionary<GameResources, int> _resources = new Dictionary<GameResources, int>();
     
-    public async void Initialize()
+    public void Initialize()
     {
         // We could initialize resources with previously stored amounts here later. 
         foreach (GameResources resource in Enum.GetValues(typeof(GameResources)))
