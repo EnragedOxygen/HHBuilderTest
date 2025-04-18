@@ -1,8 +1,11 @@
-﻿namespace App.Scripts.Core
+﻿using System;
+
+namespace App.Scripts.Core
 {
     // Basic CRUD interface for resource management
     public interface IResourceManager
     {
+        event Action OnChange;
         void UpdateResource(GameResources gameResource, int value);
 
         void SetResource(GameResources gameResource, int value);

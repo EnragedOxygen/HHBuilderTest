@@ -8,6 +8,7 @@ public class BasicResourceManager : IInitializable, IResourceManager
     // Simple way of storing resources
     // Could be replaced with a state or DB request later
     private readonly Dictionary<GameResources, int> _resources = new Dictionary<GameResources, int>();
+    public event Action OnChange;
     
     public void Initialize()
     {
@@ -19,14 +20,17 @@ public class BasicResourceManager : IInitializable, IResourceManager
         }
     }
 
+
     public void UpdateResource(GameResources gameResource, int value)
     {
         _resources[gameResource] += value;
+        OnChange?.Invoke();
     }
     
     public void SetResource(GameResources gameResource, int value)
     {
         _resources[gameResource] = value;
+        OnChange?.Invoke();
     }
     
     public int GetResource(GameResources gameResource)

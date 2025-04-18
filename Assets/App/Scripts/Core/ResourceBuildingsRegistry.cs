@@ -1,6 +1,6 @@
 ﻿namespace App.Scripts.Core
 {
-    public class ResourceBuildingsRegistry : ObjectRegistry<IResourceFactory>
+    public class ResourceBuildingsRegistry : ObjectRegistry<IResourceProducer>
     {
         
     }

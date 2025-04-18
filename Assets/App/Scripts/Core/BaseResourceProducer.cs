@@ -1,21 +1,24 @@
-﻿namespace App.Scripts.Core
+﻿using Zenject;
+
+namespace App.Scripts.Core
 {
-    public abstract class BaseResourceProducer
+    public abstract class BaseResourceProducer : IResourceProducer
     {
         // Simple ResourceProducing Class
+        [Inject]
+        protected IResourceManager _resourceManager;
         
         // Resources This Building Produces
-        public GameResources GameResources { get; private set; }
+        public GameResources ProducedResource { get;}
 
         // Amount It Produces
-        public int Amount { get; private set; }
+        public int ProducedAmount { get;}
 
-        protected BaseResourceProducer(GameResources resourceType, int amount)
+        protected BaseResourceProducer(GameResources resourceType, int producedAmount)
         {
-            GameResources = resourceType;
-            Amount = amount;
+            ProducedResource = resourceType;
+            ProducedAmount = producedAmount;
         }
-        public abstract void Gather();
-
+        public abstract void Produce();
     }
 }

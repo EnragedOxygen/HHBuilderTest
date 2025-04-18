@@ -2,13 +2,14 @@
 {
     public class TimedBaseResourceProducer : BaseResourceProducer
     {
-        public TimedBaseResourceProducer(GameResources resourceType, int amount) : base(resourceType, amount)
+        public TimedBaseResourceProducer(GameResources resourceType, int producedAmount)
+            : base(resourceType, producedAmount)
         {
         }
 
-        public override void Gather()
+        public override void Produce()
         {
-            
+            _resourceManager.UpdateResource(ProducedResource,ProducedAmount);
         }
     }
 }
