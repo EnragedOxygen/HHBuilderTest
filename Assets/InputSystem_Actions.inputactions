@@ -95,7 +95,7 @@
                     "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Touch",
                     "action": "Drag",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -117,7 +117,7 @@
                     "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Touch",
                     "action": "PointerPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
